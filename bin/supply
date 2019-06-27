@@ -4,8 +4,26 @@ echo "Running Supply Script of custom buildpack"
 
 echo $0 $1 $2 $3 $4
 
+echo "ls"
 ls 
+
+echo "ls $1"
+
+ls $1
+
+echo "ls $2"
+
+ls $2
+
+
+echo "ls $3"
+
+ls $3
 pwd
 whoami
+
+zypper lr
+
+echo "Hello world" > index.html
 
 exit 0

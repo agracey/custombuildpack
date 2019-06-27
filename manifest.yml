@@ -7,3 +7,12 @@ include_files:
 - bin/finalize
 - bin/release
 - manifest.yml
+dependencies:
+- name: nginx
+  version: 1.15.12
+  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.15.12-linux-x64-cflinuxfs2-4d0440ef.tgz
+  sha256: 4d0440ef3bd59478e8adae2d8bebd329b7e8fa63abdd242f3696bc28677e2f6a
+  cf_stacks:
+  - cflinuxfs2
+  source: http://nginx.org/download/nginx-1.15.12.tar.gz
+  source_sha256: 3d5b90aa17de1700709ae4ec6c4d73d87c888b06c510391bf7104b006fdb2abe
