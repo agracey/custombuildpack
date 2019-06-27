@@ -7,8 +7,8 @@ export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-mkdir dist
-echo "Hello world" > dist/index.html
+mkdir $2/dist
+echo "Hello world" > $2/dist/index.html
 
-echo "root: dist/" > Staticfile
+echo "root: dist/" > $2/Staticfile
 exit 0
