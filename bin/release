@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "default_process_types:"
-echo "  web: ls -la .. && ../bin/node app.js" 
+echo "  web: ls -la .. && ../deps/0/bin/node app.js" 
