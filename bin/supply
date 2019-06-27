@@ -4,25 +4,23 @@ echo "Running Supply Script of custom buildpack"
 
 echo $0 $1 $2 $3 $4
 
-echo "ls"
-ls 
+echo "find ."
+find . 
 
-echo "ls $1"
+echo "find $1"
 
-ls $1
+find $1
 
-echo "ls $2"
+find "find $2"
+find $2
 
-ls $2
 
+echo "find $3"
 
-echo "ls $3"
+find $3
 
-ls $3
 pwd
 whoami
-
-zypper lr
 
 echo "Hello world" > index.html
 
