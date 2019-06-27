@@ -1,1 +1,4 @@
 #!/bin/bash
+
+
+echo "var http = require('http'); http.createServer(()=>{}).listen(process.env.PORT)" > app.js
