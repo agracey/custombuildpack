@@ -10,8 +10,8 @@ DEPS_DIR=$3/$4
 
 curl https://nodejs.org/download/release/v12.5.0/node-v12.5.0-linux-x64.tar.gz > $2/node.tgz
 
-sudo mkdir -p $DEPS_DIR/node
-sudo tar -xJvf $2/node.tgz -C $DEPS_DIR/node
+mkdir -p $DEPS_DIR/node
+tar -xJvf $2/node.tgz -C $DEPS_DIR/node
 
 mkdir $DEPS_DIR/bin
 ln -s $DEPS_DIR/bin/node $DEPS_DIR/node/bin/node
