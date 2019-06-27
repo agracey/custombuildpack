@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "default_process_types:"
-echo "  web: node app.js" 
+echo "  web: sleep 180 && node app.js" 
