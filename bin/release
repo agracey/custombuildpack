@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "default_process_types:"
-echo "  web: find . && sleep 180 && node app.js" 
+echo "  web: pwd && ls -la . && sleep 180 && node app.js" 
