@@ -1,7 +1,4 @@
 #!/bin/bash
 
-echo "Running Release" 
-
-echo $0 $1 $2 $3
-
-exit 0
+echo "default_process_types:"
+echo "  web: node app.js" 
