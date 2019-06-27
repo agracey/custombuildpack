@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Running Supply Script of custom buildpack"
+
+echo $0 $1 $2 $3 $4
+
+ls 
+pwd
+whoami
+
+exit 0
