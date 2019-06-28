@@ -9,10 +9,31 @@ const write = (res, data, code, headers) => {
   res.end(JSON.stringify(data))
 }
 
+const getData = (req) =>{
+  return new Promise(function(resolve){
+    console.log(JSON.stringify(req))
+
+    var data = '';
+    req.on('data', function( chunk ) {
+      data += chunk;
+    });
+
+    req.on('end', function() {
+      req.rawBody = data;
+      if (data && data.indexOf('{') > -1 ) {
+        req.body = JSON.parse(data);
+      }
+      resolve(req.body)
+    });
+  })
+
+
+
+}
 
 http.createServer((req,res)=>{
   console.log('Recieved Request')
-  func(req).then((data, headers)=>{
+  getData(req).then(func).then((data, headers)=>{
     const code = !data ? 204 : 200
     write(res, data, code, headers)
   }).catch((err, code, headers)=>{
