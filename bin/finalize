@@ -13,19 +13,8 @@ ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/node $DEPS_DIR/bin/node
 ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/npm $DEPS_DIR/bin/npm 
 
 cp $BUILDPACK_DIR/app.js .
-
-echo "Curr Dir"
-ls -la .
-
-echo "cache Dir"
-ls -la $CACHE_DIR
-
-
-echo "deps Dir"
-ls -la $DEPS_DIR
-
-echo "BUILD"
-
-ls -la $BUILD_DIR
+cp $CACHE_DIR/function.js .
+cp $CACHE_DIR/package.json .
+cp $CACHE_DIR/package-lock.json .
 
 npm install 
