@@ -11,7 +11,7 @@ const write = (res, data, code, headers) => {
 
 const getData = (req) =>{
   return new Promise(function(resolve){
-    console.log("REQ:", JSON.stringify(req,params))
+    //console.log("REQ:", JSON.stringify(req,params))
 
     var data = '';
     req.on('data', function( chunk ) {
