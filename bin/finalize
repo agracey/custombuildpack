@@ -12,4 +12,4 @@ ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/npm $DEPS_DIR/bin/npm
 
 cp $BUILDPACK_DIR/app.js .
 
-$DEPS_DIR/bin/npm install 
+$DEPS_DIR/node-v12.5.0-linux-x64/bin/npm install 
