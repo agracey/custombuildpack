@@ -1,6 +1,5 @@
-import http from 'http'
-
-import func from './function.js'
+const http = require('http')
+const func = require('./function.js')
 
 
 const addContentType = (a) => (Object.assign({}, a, {"Content-Type": "application/json"}))

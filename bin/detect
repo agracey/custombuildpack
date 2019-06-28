@@ -2,9 +2,4 @@
 
 echo "Running Detect Script of custom buildpack"
 
-ls 
-pwd
-whoami
-
-
 exit 0
