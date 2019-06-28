@@ -11,7 +11,7 @@ const write = (res, data, code, headers) => {
 
 const getData = (req) =>{
   return new Promise(function(resolve){
-    console.log(JSON.stringify(req))
+    console.log("REQ:", JSON.stringify(req))
 
     var data = '';
     req.on('data', function( chunk ) {
@@ -26,19 +26,19 @@ const getData = (req) =>{
       resolve(req.body)
     });
   })
-
-
-
 }
 
 http.createServer((req,res)=>{
   console.log('Recieved Request')
+
   getData(req).then(func).then((data, headers)=>{
     const code = !data ? 204 : 200
     write(res, data, code, headers)
   }).catch((err, code, headers)=>{
+    console.log('ERROR',err)
     write(res, err | {error: 'Unknown Error'}, code | 500, headers)
   })
+
 }).listen(process.env.PORT || 8080)
 
 
