@@ -17,6 +17,13 @@ cp $BUILDPACK_DIR/app.js .
 echo "Curr Dir"
 ls -la .
 
+echo "cache Dir"
+ls -la $CACHE_DIR
+
+
+echo "deps Dir"
+ls -la $DEPS_DIR
+
 echo "BUILD"
 
 ls -la $BUILD_DIR
