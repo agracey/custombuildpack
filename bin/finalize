@@ -8,6 +8,7 @@ DEPS_DIR=$3/$4
 ls $BUILD_DIR
 ls $CACHE_DIR
 ls $DEPS_DIR
+ls $DEPS_DIR/bin
 
 cp $BUILDPACK_DIR/app.js .
 
