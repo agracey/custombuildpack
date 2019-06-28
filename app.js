@@ -23,7 +23,7 @@ const getData = (req) =>{
       if (data && data.indexOf('{') > -1 ) {
         req.body = JSON.parse(data);
       }
-      resolve(req.body)
+      resolve({body:req.body})
     });
   })
 }
@@ -36,7 +36,7 @@ http.createServer((req,res)=>{
     write(res, data, code, headers)
   }).catch((err, code, headers)=>{
     console.log('ERROR',err)
-    write(res, err | {error: 'Unknown Error'}, code | 500, headers)
+    write(res, err || {error: 'Unknown Error'}, code || 500, headers)
   })
 
 }).listen(process.env.PORT || 8080)
