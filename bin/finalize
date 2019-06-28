@@ -6,6 +6,8 @@ CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
 ls -la $DEPS_DIR/node-v12.5.0-linux-x64
+export PATH=$DEPS_DIR/bin:$PATH
+
 
 ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/node $DEPS_DIR/bin/node 
 ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/npm $DEPS_DIR/bin/npm 
