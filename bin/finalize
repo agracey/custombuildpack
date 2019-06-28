@@ -1,4 +1,10 @@
 #!/bin/bash
 
+export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+BUILD_DIR=$1
+CACHE_DIR=$2
+DEPS_DIR=$3/$4
 
-echo "var http = require('http'); http.createServer((req,res)=>{res.writeHead(200); res.end('Hello World');}).listen(process.env.PORT)" > app.js
+cp $BUILDPACK_DIR/app.js .
+
+$DEPS_DIR/bin/npm npm install 
