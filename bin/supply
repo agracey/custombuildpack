@@ -14,7 +14,5 @@ mkdir -p $DEPS_DIR/node
 tar -xzf $2/node.tgz -C $DEPS_DIR/
 
 mkdir $DEPS_DIR/bin
-ln -s $DEPS_DIR/node-v12.5.0-x64/bin/node $DEPS_DIR/bin/node 
-ln -s $DEPS_DIR/node-v12.5.0-x64/bin/npm $DEPS_DIR/bin/npm 
 
 exit 0
