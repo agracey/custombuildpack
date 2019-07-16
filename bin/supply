@@ -29,8 +29,7 @@ ls $DEPS_DIR
 
 curl https://nodejs.org/download/release/v12.5.0/node-v12.5.0-linux-x64.tar.gz > $CACHE_DIR/node.tgz
 
-tar -xzf $CACHE_DIR/node.tgz -C $DEPS_DIR/
-
-mkdir $DEPS_DIR/bin
+tar -xzf $CACHE_DIR/node.tgz -C $CACHE_DIR/
+cp -r $CACHE_DIR/node-v12.5.0-linux-x64 $DEPS_DIR/node
 
 exit 0

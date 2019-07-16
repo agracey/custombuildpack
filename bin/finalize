@@ -30,16 +30,8 @@ cp $BUILD_DIR/function.js .
 cp $BUILD_DIR/package.json .
 cp $BUILD_DIR/package-lock.json .
 
-
-
-
-
-# Add Deps as PATH for running npm below.
-export PATH=$DEPS_DIR/bin:$PATH
-
-# Add symlinks to put in PATH 
-ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/node $DEPS_DIR/bin/node 
-ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/npm $DEPS_DIR/bin/npm 
+# Add node bin as PATH for running npm below.
+export PATH=$DEPS_DIR/node/bin:$PATH
 
 # Install any npm dependencies specified
 npm install 
