@@ -15,7 +15,7 @@ echo "Running Detect Script of custom buildpack" 1>&2
 
 BP=$(dirname $(dirname $0))
 
-if [ -f $1/package.json && -f $1/function.js]; then
+if [ -f $1/package.json && -f $1/function.js ]; then
   echo "staticfile `cat $BP/VERSION`" && exit 0
 else
   echo "no" && exit 1
