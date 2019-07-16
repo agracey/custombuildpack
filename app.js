@@ -47,8 +47,8 @@ const buildEvent = (req) => {
 const handleRequest = async (req) => {
   const event = await buildEvent(req) 
   const context = await buildContext(req)
-  const data = await func.run(event,context)
-  return {data}
+  const data = await func.run(event, context)
+  return {data, headers:{}}
 }
 
 
@@ -67,7 +67,7 @@ http.createServer((req,res)=>{
     write(res, data, code, headers)
   }).catch((err)=>{
     console.log('ERROR: ',err)
-    write(res, err || {error: 'Unknown Error'}, 500, headers)
+    write(res, err || {error: 'Unknown Error'}, 500, {})
   })
 
 }).listen(process.env.PORT || 8080)
