@@ -1,16 +1,35 @@
 #!/bin/bash
 
+###
+# Supply is where any needed dependencies are downloaded and installed.
+# 
+# I'm pulling down a recent version of node.js and installing it into the dependencies directory. 
+#
+# There are four directories that we care about:
+# - BUILDPACK_DIR is the directory where the buildpack it self gets unpacked to.
+# - BUILD_DIR is 
+# 
+###
 echo "Running Supply Script of custom buildpack"
-output_dir=$(mktemp -d -t supplyXXX)
 
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
-BUILD_DIR=$1
-CACHE_DIR=$2
-DEPS_DIR=$3/$4
+BUILD_DIR=$0
+CACHE_DIR=$1
+DEPS_DIR=$2/$3
 
-curl https://nodejs.org/download/release/v12.5.0/node-v12.5.0-linux-x64.tar.gz > $2/node.tgz
 
-tar -xzf $2/node.tgz -C $DEPS_DIR/
+echo "BUILD_DIR"
+ls $BUILD_DIR
+
+echo "CACHE_DIR"
+ls $CACHE_DIR
+
+echo "DEPS_DIR"
+ls $DEPS_DIR
+
+curl https://nodejs.org/download/release/v12.5.0/node-v12.5.0-linux-x64.tar.gz > $CACHE_DIR/node.tgz
+
+tar -xzf $CACHE_DIR/node.tgz -C $DEPS_DIR/
 
 mkdir $DEPS_DIR/bin
 

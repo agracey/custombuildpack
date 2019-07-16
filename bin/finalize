@@ -1,20 +1,45 @@
 #!/bin/bash
 
-export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
-BUILD_DIR=$1
-CACHE_DIR=$2
-DEPS_DIR=$3/$4
+###
+# Finalize gets run if it's the last buildpack able to run on the code.
+# 
+# It's responsible for creating the directory structure that get's built into the droplet then container.
+# 
+###
 
-ls -la $DEPS_DIR/node-v12.5.0-linux-x64
+export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
+BUILD_DIR=$0
+CACHE_DIR=$1
+DEPS_DIR=$2/$3
+
+echo "Running Supply Script of custom buildpack"
+
+echo "BUILD_DIR"
+ls $BUILD_DIR
+
+echo "CACHE_DIR"
+ls $CACHE_DIR
+
+echo "DEPS_DIR"
+ls $DEPS_DIR
+
+
+# Move needed files to the working directory
+cp $BUILDPACK_DIR/app.js .
+cp $BUILD_DIR/function.js .
+cp $BUILD_DIR/package.json .
+cp $BUILD_DIR/package-lock.json .
+
+
+
+
+
+# Add Deps as PATH for running npm below.
 export PATH=$DEPS_DIR/bin:$PATH
 
-
+# Add symlinks to put in PATH 
 ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/node $DEPS_DIR/bin/node 
 ln -s $DEPS_DIR/node-v12.5.0-linux-x64/bin/npm $DEPS_DIR/bin/npm 
 
-cp $BUILDPACK_DIR/app.js .
-cp $CACHE_DIR/function.js .
-cp $CACHE_DIR/package.json .
-cp $CACHE_DIR/package-lock.json .
-
+# Install any npm dependencies specified
 npm install 

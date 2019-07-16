@@ -1,6 +1,5 @@
 ---
 include_files:
-- README.md
 - VERSION
 - bin/detect
 - bin/supply

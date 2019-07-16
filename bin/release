@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "default_process_types:"
-echo "  web: ../deps/0/node-v12.5.0-linux-x64/bin/node app.js" 
+echo "  web: ../deps/0/bin/node app.js" 
