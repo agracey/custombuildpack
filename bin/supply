@@ -17,16 +17,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3/$4
 
-
-echo "BUILD_DIR"
-ls $BUILD_DIR
-
-echo "CACHE_DIR"
-ls $CACHE_DIR
-
-echo "DEPS_DIR"
-ls $DEPS_DIR
-
 curl https://nodejs.org/download/release/v12.5.0/node-v12.5.0-linux-x64.tar.gz > $CACHE_DIR/node.tgz
 
 tar -xzf $CACHE_DIR/node.tgz -C $CACHE_DIR/

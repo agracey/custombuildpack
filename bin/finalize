@@ -14,16 +14,6 @@ DEPS_DIR=$3/$4
 
 echo "Running Supply Script of custom buildpack"
 
-echo "BUILD_DIR"
-ls $BUILD_DIR
-
-echo "CACHE_DIR"
-ls $CACHE_DIR
-
-echo "DEPS_DIR"
-ls $DEPS_DIR
-
-
 # Move needed files to the working directory
 cp $BUILDPACK_DIR/app.js .
 cp $BUILD_DIR/function.js .
