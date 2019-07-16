@@ -10,7 +10,7 @@
 ###
 
 
-echo "Running Detect Script of custom buildpack" > 1>&2
+echo "Running Detect Script of custom buildpack" 1>&2
 
 
 BP=$(dirname $(dirname $0))
